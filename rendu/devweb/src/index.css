@@ -1,15 +1,8 @@
-:root {
-  --bg: #0f1419;
-  --panel: #1a2029;
-  --panel-2: #232b36;
-  --accent: #3b82f6;
-  --text: #e6edf3;
-  --muted: #8b949e;
-  --user: #1d4ed8;
-  --ok: #22c55e;
-  --bad: #ef4444;
-  --warn: #f59e0b;
-}
+@import "./design-system/tokens/colors.css";
+@import "./design-system/tokens/typography.css";
+@import "./design-system/tokens/spacing.css";
+@import "./design-system/tokens/effects.css";
+@import "./design-system/tokens/animations.css";
 
 * {
   box-sizing: border-box;
@@ -23,7 +16,23 @@ body,
 }
 
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-sans);
+  background: var(--color-bg-canvas);
+  color: var(--color-fg-default);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-normal);
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.32);
+  color: var(--color-fg-default);
 }

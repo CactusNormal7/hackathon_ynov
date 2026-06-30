@@ -7,6 +7,7 @@ export function useChat() {
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState(null);
   const abortRef = useRef(null);
+  const generationRef = useRef(0);
 
   const send = useCallback(
     async (text) => {
@@ -14,6 +15,7 @@ export function useChat() {
       if (!content || isStreaming) return;
 
       setError(null);
+      const generation = generationRef.current;
       const userMsg = { id: crypto.randomUUID(), role: "user", content };
       const assistantId = crypto.randomUUID();
 
@@ -34,6 +36,7 @@ export function useChat() {
           {
             signal: controller.signal,
             onToken: (token) => {
+              if (generation !== generationRef.current || controller.signal.aborted) return;
               setMessages((prev) =>
                 prev.map((m) =>
                   m.id === assistantId
@@ -45,7 +48,7 @@ export function useChat() {
           },
         );
       } catch (err) {
-        if (err.name !== "AbortError") {
+        if (generation === generationRef.current && err.name !== "AbortError") {
           setError(err.message || "Erreur de communication avec le serveur.");
           // Retire la bulle assistant vide en cas d'échec.
           setMessages((prev) =>
@@ -53,8 +56,10 @@ export function useChat() {
           );
         }
       } finally {
-        setIsStreaming(false);
-        abortRef.current = null;
+        if (generation === generationRef.current) {
+          setIsStreaming(false);
+          abortRef.current = null;
+        }
       }
     },
     [messages, isStreaming],
@@ -62,8 +67,12 @@ export function useChat() {
 
   const stop = useCallback(() => abortRef.current?.abort(), []);
   const clear = useCallback(() => {
+    generationRef.current += 1;
+    abortRef.current?.abort();
+    abortRef.current = null;
     setMessages([]);
     setError(null);
+    setIsStreaming(false);
   }, []);
 
   return { messages, isStreaming, error, send, stop, clear };

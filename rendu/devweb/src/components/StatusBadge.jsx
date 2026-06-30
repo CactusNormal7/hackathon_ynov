@@ -8,7 +8,7 @@ const LABELS = {
 export default function StatusBadge({ status }) {
   return (
     <span className={`status status--${status}`}>
-      <span className="status__dot" />
+      <span className="status__dot" aria-hidden="true" />
       {LABELS[status]}
     </span>
   );
