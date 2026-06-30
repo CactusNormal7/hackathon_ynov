@@ -1,0 +1,48 @@
+/* TechCorp Industries — Color Tokens
+   Dark, finance-first palette: deep navy backgrounds, electric blue accent,
+   finance semantic greens/reds. All values are intentional — do not round. */
+
+:root {
+  /* ── Backgrounds (surface hierarchy) ── */
+  --color-bg-canvas:   #080C14;   /* absolute darkest — page backdrop        */
+  --color-bg-base:     #0D1117;   /* main app background                     */
+  --color-bg-surface:  #151C28;   /* panels, sidebars                        */
+  --color-bg-elevated: #1A2336;   /* cards, modals                           */
+  --color-bg-overlay:  #202C40;   /* dropdowns, tooltips, popovers           */
+
+  /* ── Borders ── */
+  --color-border-subtle:  #1A2540;
+  --color-border-default: #253351;
+  --color-border-strong:  #3A4F72;
+
+  /* ── Foreground ── */
+  --color-fg-default:   #E8EFF8;   /* primary text                           */
+  --color-fg-muted:     #8BA3C7;   /* secondary text, labels                 */
+  --color-fg-subtle:    #4A6080;   /* disabled, placeholders, timestamps     */
+  --color-fg-on-accent: #FFFFFF;   /* text on blue surfaces                  */
+
+  /* ── Accent — Electric Blue ── */
+  --color-accent-subtle:  #1A2A4A;   /* very faint tint background           */
+  --color-accent-muted:   #1D4ED8;   /* darker interactive blue              */
+  --color-accent-default: #3B82F6;   /* primary action color                 */
+  --color-accent-strong:  #60A5FA;   /* hover, text on dark surface          */
+
+  /* ── Finance Semantic — Positive (green) ── */
+  --color-positive:        #22C55E;
+  --color-positive-muted:  #16A34A;
+  --color-positive-subtle: #0F2A1A;
+
+  /* ── Finance Semantic — Negative (red) ── */
+  --color-negative:        #F87171;
+  --color-negative-muted:  #DC2626;
+  --color-negative-subtle: #2A0A0A;
+
+  /* ── Finance Semantic — Warning (amber) ── */
+  --color-warning:        #FBBF24;
+  --color-warning-muted:  #D97706;
+  --color-warning-subtle: #2A1A03;
+
+  /* ── Finance Semantic — Gold (premium/highlight) ── */
+  --color-gold:        #F59E0B;
+  --color-gold-subtle: #241A05;
+}

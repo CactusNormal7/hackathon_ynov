@@ -1,0 +1,17 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TechCorp">
+  
+  <rect width="40" height="40" rx="8" fill="#0D1117"></rect>
+  <rect x="0.5" y="0.5" width="39" height="39" rx="7.5" stroke="#253351" stroke-width="1" fill="none"></rect>
+  
+  <circle cx="9" cy="9" r="1" fill="#253351"></circle>
+  <circle cx="20" cy="9" r="1" fill="#253351"></circle>
+  <circle cx="31" cy="9" r="1" fill="#253351"></circle>
+  <circle cx="9" cy="20" r="1" fill="#253351"></circle>
+  <circle cx="31" cy="20" r="1" fill="#253351"></circle>
+  <circle cx="9" cy="31" r="1" fill="#253351"></circle>
+  <circle cx="20" cy="31" r="1" fill="#253351"></circle>
+  <circle cx="31" cy="31" r="1" fill="#253351"></circle>
+  
+  <rect x="8" y="13" width="24" height="3" rx="1.5" fill="#3B82F6"></rect>
+  <rect x="18.5" y="16" width="3" height="12" rx="1.5" fill="#3B82F6"></rect>
+</svg>
