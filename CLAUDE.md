@@ -33,6 +33,7 @@ npm run build                     # production build into dist/
 - **Model name** must match what INFRA created: default `phi3-financial` (override with `VITE_MODEL_NAME`). Remote/other Ollama host: `OLLAMA_URL=http://host:11434 npm run dev`.
 - Architecture: `config.js` (model/system prompt) → `api/ollama.js` (`pingServer`, `streamChat`) → hooks `useChat` (history + streaming) and `useServerStatus` (5s connection poll) → components (`ChatWindow`, `MessageBubble`, `MessageInput`, `StatusBadge`).
 - Connection badge (Connecté/Déconnecté) polls `/api/tags`; the composer disables itself when the server is offline.
+- Visual design applies the TechCorp Design System from `/Users/cactus/Downloads/TechCorp Design System/`: tokens are vendored into `src/design-system/tokens/`, logos into `src/assets/`. Keep the UI dark-first, dense, professional, with only the electric blue accent `#3B82F6`, no emoji in UI chrome, and JetBrains Mono for model/API/data values.
 
 ## ⚠️ The planted backdoor (intentional — this is the CYBER challenge)
 
